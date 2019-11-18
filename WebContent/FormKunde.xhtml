@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Vitali 15.11.2019  11:51:07 -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:head><title>Kundenregistrierung</title></h:head>
+	
+	<h:body>
+		<h:outputText value="#{kundeBean.kundenStatus}" />
+		<h1>FormKunde</h1>
+		<h:panelGroup rendered="#{kundeBean.kundenStatus==1}">
+			<h:form>
+				<h2>Sign in</h2>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Username"/>
+					<h:inputText value="#{kundeBean.kunde.username}"/>
+					<h:outputLabel value="Password"/>
+					<h:inputSecret value="#{kundeBean.kunde.passwort}"/>
+					
+					<!-- action methode mussen string gegeben -->
+					<h:commandButton action="#{kundeBean.login}" value="Login"/>
+				</h:panelGrid>
+			</h:form>
+		</h:panelGroup>
+
+		<h:panelGroup rendered="#{kundeBean.kundenStatus==2}">
+			<h:form>
+				<h2>Sign up</h2>
+				<h:panelGrid columns="2">
+					<h:outputLabel for="vn_field" value="Vorname"/>
+					<h:inputText id="vn_field" value="#{kundeBean.kunde.vorname}"/>
+					
+					<h:outputLabel for="nn_field" value="Nachname"/>
+					<h:inputText id="nn_field" value="#{kundeBean.kunde.nachname}"/>
+					
+					<h:outputLabel for="email_field" value="E-mail"/>
+					<h:inputText id="email_field" value="#{kundeBean.kunde.email}"/>
+					
+					<h:outputLabel for="usr_field" value="Username"/>
+					<h:inputText id="usr_field" value="#{kundeBean.kunde.username}"/>
+					
+					<h:outputLabel for="pwd_field" value="Passwort"/>
+					<h:inputText id="pwd_field" value="#{kundeBean.kunde.passwort}"/>
+					<h:outputText value=""/>
+					<h:commandButton action="ShowKunde" value="Weiter" />
+				</h:panelGrid>
+			</h:form>
+		</h:panelGroup>
+			
+	</h:body>
+</html>
