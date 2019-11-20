@@ -9,6 +9,7 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
+<!-- In Hibernate kann mann mit xml arbeiten, oder mit annotations(ab Java 1.5), besser mit annotations -->
 <!--         <mapping resource="hbn/Kunde.hbm.xml"/> -->
     </session-factory>
 </hibernate-configuration>
