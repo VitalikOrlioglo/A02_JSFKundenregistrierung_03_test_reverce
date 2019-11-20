@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20.11.2019 12:10:53 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="java3" dynamic-insert="false" dynamic-update="false" mutable="true" name="hbn.Kunde" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="kunde">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="vorname" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="vorname" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="nachname" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="nachname" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="username" not-null="true" unique="true"/>
+        </property>
+        <property generated="never" lazy="false" name="passwort" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="passwort" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="email" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
